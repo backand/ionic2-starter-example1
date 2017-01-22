@@ -62,11 +62,41 @@ export class LoginPage {
   }
 
   public useAnonymousAuth() {
-      this.backand.useAnonymousAuth();
-      this.auth_status = 'OK';
-      this.is_auth_error = false;
-      this.auth_type = 'Anonymous';
-      this.loggedInUser = 'Anonymous';
+      this.backand.useAnonymousAuth()
+      .then((data: any) => {
+          console.log(data);
+          this.auth_status = 'OK';
+          this.is_auth_error = false;
+          this.loggedInUser = data.data.username;
+      },
+      (error: any) => {
+          console.log(error);
+          let errorMessage: string = error.data.error_description;
+          this.auth_status = `Error: ${errorMessage}`;
+          this.is_auth_error = true;
+          console.log(errorMessage)
+          this.auth_status = 'ERROR';
+      });
+
+  }
+
+  public socialSignin(provider: string) {
+    this.backand.socialSignin(provider)
+      .then((data: any) => {
+            console.log('Sign up succeeded with:' + provider);
+            this.auth_status = 'OK';
+            this.is_auth_error = false;
+            this.loggedInUser = data.data.username;
+      },
+      (error: any) => {
+            console.log(error)
+            let errorMessage: string = error.data.error_description;
+            this.auth_status = `Error: ${errorMessage}`;
+            this.is_auth_error = true;
+            console.log(errorMessage)
+            this.auth_status = 'ERROR';
+      }
+    );
   }
 
   public signOut() {

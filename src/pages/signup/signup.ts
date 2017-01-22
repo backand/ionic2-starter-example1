@@ -35,17 +35,6 @@ export class SignupPage {
     );
   }
 
-  public socialSignin(provider: string) {
-    this.backand.socialSignin(provider)
-      .then((data: any) => {
-            console.log('Sign up succeeded with:' + provider);
-      },
-      (err: any) => {
-            console.log(err)
-      }
-    );
-  }
-
   // public socialSignup(provider) {
   //   this.backand.socialSignup(provider)
   //     .then((data: any) => {
