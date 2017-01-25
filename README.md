@@ -11,7 +11,7 @@ $ git clone https://github.com/backand/ionic2-starter-example1.git
 ```bash
 $ cd ionic2-starter-example1
 $ npm i
-$ npm i --only=dev #(if needed -> devDependencies are also required for ionic to run)
+$ ionic plugin add cordova-plugin-inappbrowser
 ```
 - run app:
 browser:
