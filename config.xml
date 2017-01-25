@@ -35,4 +35,5 @@
   <plugin name="cordova-plugin-device" spec="1.1.4"/>
   <plugin name="cordova-plugin-splashscreen" spec="~4.0.1"/>
   <allow-navigation href="http://10.0.0.2:8100"/>
+  <allow-navigation href="http://10.53.111.218:8100"/>
 </widget>

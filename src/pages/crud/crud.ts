@@ -56,7 +56,7 @@ export class CrudPage {
           },
           (err: any) => {
               console.log(err);
-              this.items = [{ name: 'yoram', 'description': 'sssss' }];
+              // this.items = [{ name: 'yoram', 'description': 'sssss' }];
           }
       );
   }
